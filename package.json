@@ -2,7 +2,7 @@
   "name": "shiptivity-api",
   "version": "1.0.0",
   "description": "The Backend of Shiptivity",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel server.js --out-dir build",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/insidesherpa/shiptivity-2#readme",
   "dependencies": {
     "better-sqlite3": "^5.4.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4"
   },
   "devDependencies": {

@@ -1,2 +1,27 @@
 node_modules/
 build/
+.vscode/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/shiptivitas-1/node_modules
+/shiptivitas-1/.pnp
+/shiptivitas-1/.pnp.js
+
+# testing
+/shiptivitas-1/coverage
+
+# production
+/shiptivitas-1/build
+
+# misc
+/shiptivitas-1/.DS_Store
+/shiptivitas-1/.env.local
+/shiptivitas-1/.env.development.local
+/shiptivitas-1/.env.test.local
+/shiptivitas-1/.env.production.local
+
+/shiptivitas-1/npm-debug.log*
+/shiptivitas-1/yarn-debug.log*
+/shiptivitas-1/yarn-error.log*

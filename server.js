@@ -1,9 +1,10 @@
-import express from 'express';
-import Database from 'better-sqlite3';
-
+const Database = require('better-sqlite3');
+const express = require('express');
+const cors = require('cors');
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'SHIPTIVITY API. Read documentation to see API docs'});
@@ -126,11 +127,21 @@ app.put('/api/v1/clients/:id', (req, res) => {
   const client = clients.find(client => client.id === id);
 
   /* ---------- Update code below ----------*/
+  // console.log(client);
+  // const biggest = clients.find(client => client.priority);
+  // console.log(biggest);
+  // const stmt = db.prepare(`UPDATE clients SET status = ${status} WHERE id = ${id};`); 
+  // const updates = stmt.run(status, id);
 
-
-
-  return res.status(200).send(clients);
+  db.prepare(`UPDATE clients SET status = ? WHERE id = ?`).run(status, id);
+  const something = db.prepare('select * from clients').all();
+  return res.status(200).send(something);
+  // client.priority = priority;
+  // client.status = status;
+  // console.log(client);
+  // return res.status(200).send(clients);
 });
 
-app.listen(3001);
-console.log('app running on port ', 3001);
+app.listen(3001, () => {
+  console.log(`Listening on port 3001`)
+});
